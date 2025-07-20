@@ -11,7 +11,25 @@ const schema = a.schema({
     .model({
       content: a.string(),
     })
-    .authorization((allow) => [allow.publicApiKey()]),
+    .authorization((allow) => [
+      allow.guest().to(['read']),
+      allow.group("Admin"),
+      allow.owner()]),
+      
+   Estate: a
+    .model({
+      id: a.string().required(),
+      name: a.string(),
+      location: a.string(),
+      price: a.float(),
+      description: a.string(),
+      image: a.string(),
+    })
+    .authorization((allow) => [
+      allow.guest().to(['read']),
+      allow.group("Admin"),
+      allow.owner(),
+    ]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
@@ -19,11 +37,13 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: "apiKey",
+    defaultAuthorizationMode: "userPool",
     apiKeyAuthorizationMode: {
       expiresInDays: 30,
     },
   },
+  // Enable logging to help debug issues with your Data API
+  logging: true
 });
 
 /*== STEP 2 ===============================================================
