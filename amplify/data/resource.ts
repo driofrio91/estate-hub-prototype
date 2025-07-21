@@ -12,10 +12,11 @@ const schema = a.schema({
       content: a.string(),
     })
     .authorization((allow) => [
+      allow.publicApiKey().to(['read']),
       allow.guest().to(['read']),
       allow.group("Admin"),
       allow.owner()]),
-      
+
    Estate: a
     .model({
       id: a.string().required(),
