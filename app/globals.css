@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import '@aws-amplify/ui-react/styles.css';
+
 /*
 :root {
   --max-width: 1100px;
