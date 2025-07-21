@@ -27,7 +27,7 @@ const schema = a.schema({
       image: a.string(),
     })
     .authorization((allow) => [
-      allow.guest().to(['read']),
+      allow.publicApiKey().to(['read']),
       allow.group("Admin"),
       allow.owner(),
     ]),
