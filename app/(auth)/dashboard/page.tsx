@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
+import { AuthorizationMode } from '@/lib/data/authModes';
+
 import "./app.css"
 import "@aws-amplify/ui-react/styles.css";
 
