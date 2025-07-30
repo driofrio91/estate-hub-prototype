@@ -1,6 +1,6 @@
 'use client';
 
-import { EntityViewModel } from '@/types/entity';
+import { EntityViewModel } from '@/types/estateViewModel';
 
 type EntityListProps = {
   entities: EntityViewModel[],
