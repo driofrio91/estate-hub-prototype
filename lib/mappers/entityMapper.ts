@@ -1,9 +1,9 @@
 import { Schema } from '@/amplify/data/resource';
-import { EntityViewModel } from '@/types/entity';
+import { EstateViewModel } from '@/types/estateViewModel';
 
 type EstateEntity = Schema['Estate']['type'];
 
-export function mapEstateToViewModel(estate: EstateEntity): EntityViewModel {
+export function mapEstateToViewModel(estate: EstateEntity): EstateViewModel {
   return {
     id: estate.id,
     name: estate.name || 'Sin nombre',
