@@ -1,4 +1,4 @@
-export type EntityViewModel = {
+export type EstateViewModel = {
     id: string;
     name: string;
     description?: string;
