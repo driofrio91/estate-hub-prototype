@@ -1,6 +1,6 @@
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '@/amplify/data/resource';
-import { AuthorizationMode } from '@/lib/data/authModes';
+import { AuthorizationMode } from '@/domain/auth/authModes';
 
 type ClientMap = {
   [K in AuthorizationMode]: ReturnType<typeof generateClient<Schema>>;

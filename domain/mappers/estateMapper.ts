@@ -1,5 +1,5 @@
 import { Schema } from '@/amplify/data/resource';
-import { EstateViewModel } from '@/types/estateViewModel';
+import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
 
 type EstateEntity = Schema['Estate']['type'];
 

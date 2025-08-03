@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
-import { AuthorizationMode } from '@/lib/data/authModes';
-import { dispatch } from '@/usecases/getEstateUseCase';
-import { EstateViewModel } from "@/types/estateViewModel";
+import { AuthorizationMode } from '@/domain/auth/authModes';
+import { dispatch } from '@/domain/usecases/getEstateUseCase';
+import { EstateViewModel } from "@/domain/viewmodel/estateViewModel";
 
 const client = generateClient<Schema>();
 

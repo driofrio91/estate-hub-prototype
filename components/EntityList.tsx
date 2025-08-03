@@ -1,9 +1,9 @@
 'use client';
 
-import { EntityViewModel } from '@/types/estateViewModel';
+import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
 
 type EntityListProps = {
-  entities: EntityViewModel[],
+  entities: EstateViewModel[],
   currentUser?: { username : string, groups : string[]},
   showControls?: false;
 };

@@ -1,8 +1,8 @@
 import { generateClient } from 'aws-amplify/data';
 import { Schema } from '@/amplify/data/resource';
-import { EstateViewModel } from '@/types/estateViewModel';
-import { mapEstateToViewModel } from '@/lib/mappers/entityMapper';
-import { AuthorizationMode } from '@/lib/data/authModes';
+import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
+import { mapEstateToViewModel } from '@/domain/mappers/estateMapper';
+import { AuthorizationMode } from '@/domain/auth/authModes';
 
 export function suscribeToEstates(onUpdate: (data: EstateViewModel[]) => void, 
 authMode: AuthorizationMode = AuthorizationMode.API_KEY) {

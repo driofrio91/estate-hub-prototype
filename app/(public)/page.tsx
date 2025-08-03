@@ -2,7 +2,7 @@
 
 import EntityList from '@/components/EntityList';
 import { useEstateEntities } from '@/hooks/useEntities';
-import { AuthorizationMode } from '@/lib/data/authModes';
+import { AuthorizationMode } from '@/domain/auth/authModes';
 
 
 

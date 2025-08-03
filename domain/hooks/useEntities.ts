@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { suscribeToEstates } from '@/lib/data/entityService';
-import { EstateViewModel } from '@/types/estateViewModel';
-import { AuthorizationMode } from '@/lib/data/authModes';
+import { suscribeToEstates } from '@/domain/service/entityService';
+import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
+import { AuthorizationMode } from '@/domain/auth/authModes';
 
 export function useEstateEntities(authMode: AuthorizationMode = AuthorizationMode.API_KEY){
     const [estates, setEstates] = useState<EstateViewModel[]>([]);
