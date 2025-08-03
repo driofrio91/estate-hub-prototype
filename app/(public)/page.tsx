@@ -1,7 +1,7 @@
 'use client';
 
 import EntityList from '@/components/EntityList';
-import { useEstateEntities } from '@/lib/hooks/useEntities';
+import { useEstateEntities } from '@/hooks/useEntities';
 import { AuthorizationMode } from '@/lib/data/authModes';
 
 
