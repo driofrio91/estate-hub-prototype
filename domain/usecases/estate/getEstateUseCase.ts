@@ -1,8 +1,9 @@
 import { AuthorizationMode } from '@/domain/auth/authModes';
 import { clients } from '@/domain/clientFactory';
 import { mapEstateToViewModel } from '@/domain/mappers/estate/estateMapper';
+import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
 
-export async function dispatch(estateId: string, authMode: AuthorizationMode = AuthorizationMode.API_KEY) {
+export async function dispatch(estateId: string, authMode: AuthorizationMode = AuthorizationMode.API_KEY) :Promise<EstateViewModel> {
     const client = clients[authMode];
     
     const {data: estateEntity, errors } = await client.models.Estate.get({"id": estateId});
