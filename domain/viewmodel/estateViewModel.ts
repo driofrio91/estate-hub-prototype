@@ -3,7 +3,9 @@ export type EstateViewModel = {
     name: string;
     description?: string;
     price?: string;
-    location: string;
+    location?: string;
     image?: string;
     owner?: string;
+    loading?: boolean;
+    error?: string | null;
 };
