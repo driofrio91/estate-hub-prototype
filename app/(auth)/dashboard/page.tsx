@@ -5,7 +5,7 @@ import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import { AuthorizationMode } from '@/domain/auth/authModes';
 
-import "./app.css"
+import "./../app.css"
 import "@aws-amplify/ui-react/styles.css";
 
 
