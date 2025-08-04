@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { suscribeToEstates } from '@/domain/service/entityService';
+import { suscribeToEstates } from '@/domain/service/suscribeToEstates';
 import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
 import { AuthorizationMode } from '@/domain/auth/authModes';
 
