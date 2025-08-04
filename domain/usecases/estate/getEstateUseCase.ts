@@ -1,6 +1,6 @@
 import { AuthorizationMode } from '@/domain/auth/authModes';
 import { clients } from '@/domain/clientFactory';
-import { mapEstateToViewModel } from '@/domain/mappers/estateMapper';
+import { mapEstateToViewModel } from '@/domain/mappers/estate/estateMapper';
 
 export async function dispatch(estateId: string, authMode: AuthorizationMode = AuthorizationMode.API_KEY) {
     const client = clients[authMode];
