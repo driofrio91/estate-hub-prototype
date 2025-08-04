@@ -17,10 +17,8 @@ export function mapViewModelToCreateEstateInput(viewModel: EstateViewModel): Cre
   return {
     name: viewModel.name,
     location: viewModel.location,
-    price: viewModel.price ? parseFloat(viewModel.price.replace(/[$,]/g, '')) : null,
+    price: viewModel.price ? parseFloat(viewModel.price.replace(/[$,]/g, '')) : undefined,
     description: viewModel.description,
     image: viewModel.image,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
   };
 }
