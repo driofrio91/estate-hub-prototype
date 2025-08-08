@@ -7,7 +7,7 @@ export function mapEstateToViewModel(estate: EstateEntity): EstateViewModel {
     id: estate.id,
     name: estate.name || 'Sin nombre',
     location: estate.location || 'Desconocida',
-    price: estate.price ? `$${estate.price.toFixed(2)}` : 'N/A',
+    price: estate.price ? estate.price.toFixed(2) : 'N/A',
     description: estate.description || '',
     image: estate.image || '',
   };
