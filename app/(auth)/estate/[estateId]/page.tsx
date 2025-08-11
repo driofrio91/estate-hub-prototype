@@ -1,5 +1,5 @@
-import EstateForm from '@/components/EstateForm';
+import EstateView from '@/components/EstateView';
 
 export default function Page({ params }: { params: { estateId: string } }) {
-  return <EstateForm estateId={params.estateId} />;
+  return <EstateView estateId={params.estateId} />;
 }
