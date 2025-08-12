@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { AuthorizationMode } from "@/domain/auth/authModes";
 import { EstateViewModel } from "@/domain/viewmodel/estateViewModel";
 import {
@@ -25,6 +26,7 @@ export default function EstateForm({ estateId }: EstateFormProps) {
     loading: !!estateId,
     error: null,
   });
+  const [isEdit, setIsEdit] = useState(estateId ? true : false);
 
   useEffect(() => {
     if (!estateId) {
@@ -94,7 +96,7 @@ export default function EstateForm({ estateId }: EstateFormProps) {
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-md">
       <h2 className="text-2xl font-semibold mb-4">
-        {estateId ? "Editar Propiedad" : "Nueva Propiedad"}
+        {isEdit ? "Editar Propiedad" : "Nueva Propiedad"}
       </h2>
 
       {viewModel.error && (
@@ -175,6 +177,17 @@ export default function EstateForm({ estateId }: EstateFormProps) {
         </div>
 
         <div className="flex justify-end mt-6">
+          {isEdit && (
+            <Link href={`/estate/${estateId}`}>
+              <button
+                type="button"
+                className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md"
+              >
+                Cancelar
+              </button>
+            </Link>
+          )}
+
           <button
             type="submit"
             disabled={viewModel.loading}
