@@ -5,7 +5,7 @@ import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
 type EntityListProps = {
   entities: EstateViewModel[],
   currentUser?: { username : string, groups : string[]},
-  showControls?: false;
+  showControls?: boolean;
 };
 
 export default function EntityList({ entities, currentUser, showControls = false }: EntityListProps) {
