@@ -15,7 +15,7 @@ export default function EntityList({ entities, currentUser, showControls = false
         <div key={entity.id} className="p-4 border rounded-md">
           <h3 className="text-lg font-semibold">{entity.name}</h3>
           <p>{entity.description}</p>
-          {showControls && currentUser && (
+          {showControls && (
             <div className="mt-2">
               <button className="mr-2 bg-blue-500 text-white px-3 py-1 rounded">Edit</button>
               <button className="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
