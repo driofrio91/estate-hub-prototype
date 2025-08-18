@@ -1,3 +1,7 @@
+/* Block scroll when the modal window is open */
+.modal-open {
+  overflow: hidden !important;
+}
 @import "tailwindcss";
 
 @import '@aws-amplify/ui-react/styles.css';
