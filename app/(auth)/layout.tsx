@@ -3,7 +3,7 @@
 import { Authenticator } from "@aws-amplify/ui-react";
 import AuthGate from "@/components/AuthGate";
 import "@aws-amplify/ui-react/styles.css";
-import SideNav from "@/app/(auth)/dashboard/side-nav";
+import SideNav from "@/app/(auth)/side-nav";
 
 export default function ProtectedLayout({
   children,
