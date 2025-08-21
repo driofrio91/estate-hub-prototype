@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import ConfirmModal from '@/components/ConfirmModal';
 import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
 import Link from 'next/link';
@@ -14,6 +15,7 @@ type EntityListProps = {
 export default function EntityList({ entities, currentUser, showControls = false }: EntityListProps) {
   const [showModal, setShowModal] = useState(false);
   const [selectedEntity, setSelectedEntity] = useState<any>(null);
+  const router = useRouter();
 
   const handleDeleteClick = (entity: any) => {
     setSelectedEntity(entity);
@@ -34,17 +36,26 @@ export default function EntityList({ entities, currentUser, showControls = false
   return (
     <div className="flex flex-col gap-4">
       {entities.map((entity: any) => (
-        <div key={entity.id} className="p-4 border rounded-md">
+        <div
+          key={entity.id}
+          className="p-4 border rounded-md cursor-pointer hover:bg-gray-50"
+          onClick={() => router.push(`/estate/${entity.id}`)}
+        >
           <h3 className="text-lg font-semibold">{entity.name}</h3>
           <p>{entity.description}</p>
           {showControls && (
             <div className="mt-2">
-              <Link href={`/estate/${entity.id}/edit`}>
-                <button className="mr-2 bg-blue-500 text-white px-3 py-1 rounded">Edit</button>
+              <Link href={`/estate/${entity.id}/edit`} passHref legacyBehavior>
+                <button
+                  className="mr-2 bg-blue-500 text-white px-3 py-1 rounded"
+                  onClick={e => e.stopPropagation()}
+                >
+                  Edit
+                </button>
               </Link>
               <button
                 className="bg-red-500 text-white px-3 py-1 rounded"
-                onClick={() => handleDeleteClick(entity)}
+                onClick={e => { e.stopPropagation(); handleDeleteClick(entity); }}
               >
                 Delete
               </button>
