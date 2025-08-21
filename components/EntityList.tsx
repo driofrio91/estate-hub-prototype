@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ConfirmModal from './ConfirmModal';
+import ConfirmModal from '@/components/ConfirmModal';
 import { EstateViewModel } from '@/domain/viewmodel/estateViewModel';
 import Link from 'next/link';
 
