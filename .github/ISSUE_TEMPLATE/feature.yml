@@ -1,0 +1,46 @@
+name: "Feature Task"
+description: "Usa este template para añadir una nueva tarea del roadmap"
+title: "[Feature] "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Descripción breve
+      description: Explica en una frase qué hace esta tarea.
+      placeholder: "Ej: Crear página pública de Estates"
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Detalles de la tarea
+      description: Explica en detalle lo que se debe implementar.
+      placeholder: "Ej: Consumir el modelo Estate con authMode: guest y renderizar listado público."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Criterios de aceptación
+      description: Lista de puntos que deben cumplirse para dar la tarea como completada.
+      placeholder: "- La ruta /estates carga con authMode: guest
+- Se muestran entidades existentes
+- Manejo de errores básico"
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Fase del proyecto
+      description: Selecciona en qué fase entra la tarea.
+      options:
+        - Fase 0 · Preparación
+        - Fase 1 · Backend
+        - Fase 2 · Integración
+        - Fase 3 · UI/UX
+        - Fase 4 · Tests
+        - Fase 5 · Documentación
+        - Fase 6 · CI/CD
