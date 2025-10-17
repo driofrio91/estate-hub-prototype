@@ -8,7 +8,7 @@ import AuthGate from '@/components/AuthGate';
 export default function AuthenticatorWrapper() {
   return (
     <Authenticator>
-      <AuthGate showUserInfo redirectOnAuth="/"/>
+      <AuthGate showUserInfo redirectOnAuth="/dashboard"/>
     </Authenticator>
   );
 }
