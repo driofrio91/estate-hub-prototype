@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AuthorizationMode } from "@/domain/auth/authModes";
 import { EstateViewModel } from "@/domain/viewmodel/estateViewModel";
@@ -11,6 +12,7 @@ interface EstateFormProps {
 }
 
 export default function EstateForm({ estateId }: EstateFormProps) {
+  const router = useRouter();
   const [viewModel, setViewModel] = useState<EstateViewModel>({
     id: "",
     name: "",
@@ -99,7 +101,14 @@ export default function EstateForm({ estateId }: EstateFormProps) {
           )}
         </div>
 
-        <div className="flex justify-end mt-6">
+        <div className="flex justify-end mt-6 space-x-2">
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-6 py-2 rounded-lg shadow-md"
+          >
+            Volver
+          </button>
           <Link href={`/estate/${estateId}/edit`}>
             <button
               type="button"
